@@ -9,13 +9,13 @@ You can set ModBusDL to split the CSVs/Tables by day, month , or year.
 
 You can also run ModBusDL from the command line using the following format:
 
-python ModBusDL.py -c <name of plc> -t <time delay in seconds>
+python ModBusDL.py -c `<name of PLC>` -t `<time delay in seconds>`
 
 or put a bunch of these one liners in a .bat file and have all your datalogging happen in the background.
 
 
 NOTE:
-* I have only tested MoDBusDL on a limited number of PLCs and can not guarantee it will work out of the box for you. I have had it running for over a year polling 5 different PLC's with no issues. If you do run into an error let me know, or better yet submit a pull request :)
+* I have only tested ModBusDL on a limited number of PLCs and can not guarantee it will work out of the box for you. I have had it running for over a year polling 5 different PLCs with no issues. If you do run into an error let me know, or better yet submit a pull request :)
 
 Some more information as well as some screen shots can be found [here](http://www.umrysh.com/modbus-dl/)
 
