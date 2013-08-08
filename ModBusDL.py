@@ -170,7 +170,7 @@ class TaskThread(threading.Thread):
 					print("[Register Error] Attempting to read outside of the server's register bounds.\n")
 					logout.writelines("%s - %s - [Register Error] Attempting to read outside of the server's register bounds.\n" % (datetime.datetime.now(),plc))
 
-				self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+				self.shutdown(button2, button3,button,textbuffer,sw,button4)
 				return
 			if rr.registers[globals()['FlagReg' + plc]] == 1:
 				if(self._typeOfThread=="csv" or self._typeOfThread=="sql"):
@@ -491,7 +491,7 @@ class TaskThread(threading.Thread):
 								else:
 									print("Could not find a table \"%s%s\" in the MySQL database.\n" % (globals()['mysqltablename' + plc] , dayofWeek[globals()['dayofWeek' + plc]]))
 									logout.writelines("%s - %s - Could not find a table \"%s%s\" in the MySQL database.\n" % (datetime.datetime.now(),plc,globals()['mysqltablename' + plc] , dayofWeek[globals()['dayofWeek' + plc]]))
-								self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+								self.shutdown(button2, button3,button,textbuffer,sw,button4)
 								return
 
 					if(self._typeOfThread=="csv" or self._typeOfThread=="csvC"):		
@@ -505,7 +505,7 @@ class TaskThread(threading.Thread):
 							else:
 								print("[Database Error] Could not insert into MySQL database.\n")
 								logout.writelines("%s - %s - [Database Error] Could not insert into MySQL database.\n" % (datetime.datetime.now(),plc))
-							self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+							self.shutdown(button2, button3,button,textbuffer,sw,button4)
 							return
 
 				elif globals()['splitby' + plc] == "2": # Month
@@ -592,7 +592,7 @@ class TaskThread(threading.Thread):
 								else:
 									print("Could not find a table \"%s%s\" in the MySQL database.\n" % (globals()['mysqltablename' + plc] , monthofYear[globals()['month' + plc]]))
 									logout.writelines("%s - %s - Could not find a table \"%s%s\" in the MySQL database.\n" % (datetime.datetime.now(),plc,globals()['mysqltablename' + plc] , monthofYear[globals()['month' + plc]]))
-								self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+								self.shutdown(button2, button3,button,textbuffer,sw,button4)
 								return
 					if(self._typeOfThread=="csv" or self._typeOfThread=="csvC"):
 						f = csv.writer(open("%s%s.csv" % (globals()['LocOfCSV' + plc], monthofYear[globals()['month' + plc]]), 'ab'), delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -605,7 +605,7 @@ class TaskThread(threading.Thread):
 							else:
 								print("[Database Error] Could not insert into MySQL database.\n")
 								logout.writelines("%s - %s - [Database Error] Could not insert into MySQL database.\n" % (datetime.datetime.now(),plc))
-							self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+							self.shutdown(button2, button3,button,textbuffer,sw,button4)
 							return
 
 
@@ -692,7 +692,7 @@ class TaskThread(threading.Thread):
 								else:
 									print("Could not find a table \"%s%s\" in the MySQL database.\n" % (globals()['mysqltablename' + plc] , str(globals()['year' + plc])))
 									logout.writelines("%s - %s - Could not find a table \"%s%s\" in the MySQL database.\n" % (datetime.datetime.now(),plc,globals()['mysqltablename' + plc] , str(globals()['year' + plc])))
-								self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+								self.shutdown(button2, button3,button,textbuffer,sw,button4)
 								return
 
 					if(self._typeOfThread=="csv" or self._typeOfThread=="csvC"):
@@ -706,7 +706,7 @@ class TaskThread(threading.Thread):
 							else:
 								print("[Database Error] Could not insert into MySQL database.\n")
 								logout.writelines("%s - %s - [Database Error] Could not insert into MySQL database.\n" % (datetime.datetime.now(),plc))
-							self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+							self.shutdown(button2, button3,button,textbuffer,sw,button4)
 							return
 
 
@@ -727,7 +727,7 @@ class TaskThread(threading.Thread):
 							else:
 								print("[Database Error] Could not insert into MySQL database.\n")
 								logout.writelines("%s - %s - [Database Error] Could not insert into MySQL database.\n" % (datetime.datetime.now(),plc))
-							self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+							self.shutdown(button2, button3,button,textbuffer,sw,button4)
 							return
 						globals()['con' + plc].close()
 				###################################
@@ -751,7 +751,7 @@ class TaskThread(threading.Thread):
 					else:
 						print("[Register Error] Cannot write to 'new data available' register.\n")
 						logout.writelines("%s - %s - [Register Error] Cannot write to 'new data available' register.\n" % (datetime.datetime.now(),plc))
-					self.shutdown(widget, button2, button3,button,textbuffer,sw,button4)
+					self.shutdown(button2, button3,button,textbuffer,sw,button4)
 					return
 			else:
 				if(self._typeOfThread=="csv" or self._typeOfThread=="sql"):
